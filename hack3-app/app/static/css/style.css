@@ -1,0 +1,148 @@
+body {
+  font-family: "Helvetica Roman", sans-serif;
+  color: var(--white);
+  line-height: 1.4;
+
+  background-color: var(--primary);
+}
+
+input,
+button,
+a {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+}
+
+button {
+  background-color: transparent;
+}
+
+h1 {
+  font-family: "Helvetica Bold Extended", sans-serif;
+  text-align: center;
+  font-size: var(--text-36);
+}
+
+/* Large containers - begin*/
+.container {
+  max-width: 975px;
+  margin: 0 auto;
+}
+
+.navigation {
+  padding: 2rem 2rem;
+  background-color: var(--secondary);
+  margin-bottom: 9rem;
+}
+
+.search_container {
+  padding: 0 2rem;
+  margin-bottom: 10rem;
+}
+
+/* Large containers - end */
+
+/* Search - begin */
+.search {
+  display: flex;
+  justify-content: space-between;
+  color: var(--black-60);
+  max-width: 625px;
+
+  background-color: var(--white);
+  border-radius: 4px;
+  padding: 1.3rem 0;
+  margin: 2rem auto;
+}
+
+.search_group {
+  display: flex;
+}
+
+.search_text,
+.icon {
+  margin: auto 0;
+}
+
+.search_text {
+  width: 100%;
+}
+
+.icon {
+  padding: 0 2rem;
+  cursor: pointer;
+}
+
+.icon:hover path {
+  stroke: var(--accent);
+}
+
+/* Search - end */
+
+/*
+- At queries.html - route: url/queries
+*/
+
+/* Card - begin*/
+.card {
+  max-width: 290px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.card:hover .card_header {
+  color: var(--accent);
+}
+
+.card_image {
+  max-width: inherit;
+  border-radius: 4px;
+}
+
+.card_info {
+  padding: 0 1.6em;
+}
+
+.card_header {
+  font-size: var(--text-22);
+  margin: 1rem 0;
+}
+
+.card_description {
+  font-size: var(--text-14);
+  color: var(--white-50);
+}
+/* Card - end */
+
+/* Recommendations */
+.recommendations {
+  padding: 0 2rem;
+}
+
+.recommendation_list {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recommendations_header {
+  font-family: "Helvetica Medium", sans-serif;
+  font-size: var(--text-22);
+  margin-bottom: 2rem;
+}
+
+/* No content - begin */
+.no_content {
+  margin: 0 auto;
+  padding: 6rem 0;
+}
+
+.no_content_paragraph {
+  font-size: var(--text-14);
+  color: var(--white-50);
+}
+
+/* No content - end */

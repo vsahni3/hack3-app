@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Your result</title>
+      <link
+         rel="stylesheet"
+         href="{{url_for('static', filename='css/global.css')}}"
+         />
+      <link
+         rel="stylesheet"
+         href="{{url_for('static', filename='css/style.css')}}"
+         />
+   </head>
+   <body>
+      <div class="navigation">
+         <a href=".">Return to home</a>
+      </div>
+      <div class="container">
+         <div class="recommendations">
+            <h2 class="recommendations_header">
+            Your recommendation based on what you searched</h3>
+            <div class="recommendation_list">
+              {% if data %}
+               {% for title in data[:10] %}
+               <div class="card" data-redirect="{{ title }}">
+                  <!-- <img
+                     class="card_image"
+                     src="#"
+                     alt="An image of the actual movie"
+                     /> -->
+                  <div class="card_info">
+                     <h3 class="card_header">{{ title }}</h3>
+                     <p class="card_description">{{ title }}</p>
+                  </div>
+               </div>
+               {% endfor %}
+              {% endif %}
+
+              {% if not data %}
+              <div class="no_content">
+                <p class="no_content_paragraph">There are no movies matched the search query :(</p>
+              </div>
+              {% endif %}
+            </div>
+         </div>
+      </div>
+      <script>
+        document.addEventListener('click', e => {
+          if (!e.target.closest('.card')) return
+
+          const card = e.target.closest('.card')
+          const link = card.dataset.redirect
+
+          window.open(`https://www.google.com/search?q=${link}`, "_blank")
+        })
+      </script>
+   </body>
+</html>
